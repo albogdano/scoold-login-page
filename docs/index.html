@@ -54,14 +54,14 @@
 		}
 
 		function login(e) {
-			var user = document.getElementById("username");
-			var pass = document.getElementById("password");
+			var user = document.getElementById("username").value;
+			var pass = document.getElementById("password").value;
 			var pathArray = backto.split("/");
 			if (pathArray && pathArray.length > 2) {
 				var protocol = pathArray[0];
 				var host = pathArray[2];
 				if (user === 'gordon' && pass === 'freeman') {
-					var url = protocol + '//' + host + '/signin/success?jwt=' + getJWT(secret) + '&passwordless=true';
+					window.location = protocol + '//' + host + '/signin/success?jwt=' + getJWT(secret) + '&passwordless=true';
 				} else {
 					window.location = protocol + '//' + host + '/signin?error=true&code=3';
 				}
@@ -97,13 +97,13 @@
 									<div class="row">
 										<div class="col-md-12 mvm">
 											<label for="username">Username</label>
-											<input type="text" name="username" class="form-control" id="username" placeholder="gordon" required>
+											<input type="text" name="username" class="form-control" id="username" required>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 mvs">
 											<label for="password">Password</label>
-											<input type="password" name="password" class="form-control" id="password" placeholder="freeman" required>
+											<input type="password" name="password" class="form-control" id="password" required>
 										</div>
 									</div>
 									<div class="row">
