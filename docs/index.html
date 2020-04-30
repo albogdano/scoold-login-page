@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="Scoold Login Page Demo">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Scoold Login Page Demo</title>
+    <title>Scoold Pro Custom Login Page Demo</title>
 	<script>
 		function saveAuth(obj) {
 			window.localStorage.setItem('para-auth', JSON.stringify(obj));
@@ -90,19 +90,19 @@
 				<div class="col-md-8 col-md-offset-2">
 					<div class="row">
 						<div class="col-md-4 col-md-offset-4">
-							<h1 class="text-center">Scoold Pro Login Page</h1>
+							<h1 class="text-center">Scoold Pro Custom Login Page</h1>
 							<form id="login-form">
 								<div class="form-group">
 									<div class="row">
 										<div class="col-md-12 mvm">
 											<label for="username">Username</label>
-											<input type="text" name="username" class="form-control" id="username" required>
+											<input type="text" name="username" class="form-control" id="username" value="gordon" required>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12 mvs">
 											<label for="password">Password</label>
-											<input type="password" name="password" class="form-control" id="password" required>
+											<input type="password" name="password" class="form-control" id="password" value="freeman" required>
 										</div>
 									</div>
 									<div class="row">
@@ -112,11 +112,12 @@
 									</div>
 								</div>
 							</form>
-							<h4 class="text-center">username: gordon</h4>
-							<h4 class="text-center">password: freeman</h4>
+							<p class="text-center">username: gordon</p>
+							<p class="text-center">password: freeman</p>
+							<p class="text-center">User <code>gordon</code> has <b>admin rights</b>.</p>
 						</div>
 					</div>
-					<h4 class="text-center">This is an example of a custom login page for Scoold Pro. The source code for this page is <a href="https://github.com/albogdano/scoold-login-page" target="_blank">here</a>.</h4>
+					<h4 class="text-center">This is just an example of a custom login page for Scoold Pro. The source code for this page is <a href="https://github.com/albogdano/scoold-login-page" target="_blank">here</a>.</h4>
 				</div>
 			</div>
 		</div>
