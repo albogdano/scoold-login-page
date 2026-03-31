@@ -37,6 +37,7 @@
 		var url = new URL(window.location.href);
 		var secret = url.searchParams.get("secret") || "secretsecretsecretsecretsecret12";
 		var backto = url.searchParams.get("backto") || document.referrer;
+		var backtoError = url.searchParams.get("backtoError");
 
 		function getJWT(secret) {
 			var now = Math.round(new Date().getTime() / 1000);
@@ -55,14 +56,12 @@
 		function login(e) {
 			var user = document.getElementById("username").value;
 			var pass = document.getElementById("password").value;
-			var pathArray = backto.split("/");
-			if (pathArray && pathArray.length > 2) {
-				var protocol = pathArray[0];
-				var host = pathArray[2];
+			var paramSeparator = backto.indexOf('?') > 0 ? '&' : '?';
+			if (backto && backto.length > 0) {
 				if (user === 'gordon' && pass === 'freeman') {
-					window.location = protocol + '//' + host + '/signin/success?jwt=' + getJWT(secret) + '&passwordless=true';
+					window.location = backto + paramSeparator + 'jwt=' + getJWT(secret) + '&passwordless=true';
 				} else {
-					window.location = protocol + '//' + host + '/signin?error=true&code=3';
+					window.location = backtoError;
 				}
 			} else {
 				console.error("backto parameter not set or document.referrer is blank.");
@@ -87,10 +86,10 @@
 	<div class="intro panel panel-defaul">
 		<div class="panel-body">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
+				<h1 class="text-center">Scoold Pro Custom Login Page</h1>
+				<div class="col-md-4 col-md-offset-4">
 					<div class="row">
 						<div class="col-md-4 col-md-offset-4">
-							<h1 class="text-center">Scoold Pro Custom Login Page</h1>
 							<form id="login-form">
 								<div class="form-group">
 									<div class="row">
