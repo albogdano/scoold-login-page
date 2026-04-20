@@ -1,14 +1,13 @@
 {
   "name": "scoold-login-page",
   "version": "0.1.0",
-  "description": "Para Web Console",
+  "description": "Scoold Example Login Page",
   "scripts": {
     "server": "python -m SimpleHTTPServer 9000"
   },
   "author": "Alex Bogdanovski",
   "license": "Apache-2.0",
   "dependencies": {
-    "jsrsasign": "*"
   },
   "devDependencies": {}
 }
