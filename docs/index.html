@@ -36,8 +36,8 @@
 
 		var url = new URL(window.location.href);
 		var secret = url.searchParams.get("secret") || "secretsecretsecretsecretsecret12";
-		var backto = url.searchParams.get("backto") || document.referrer;
-		var backtoError = url.searchParams.get("backtoError");
+		var backto = url.searchParams.get("backto") || document.referrer.replace(/\/$/, '') + (document.referrer.indexOf("/signin") > 0 ? "" : "/signin/success");
+		var backtoError = url.searchParams.get("backtoError") || document.referrer.replace(/\/$/, '') + (document.referrer.indexOf("/signin") > 0 ? "" : "/signin?code=3&error=true");
 
 		function getJWT(secret) {
 			var now = Math.round(new Date().getTime() / 1000);
@@ -87,7 +87,7 @@
 		<div class="panel-body">
 			<div class="row">
 				<h1 class="text-center">Scoold Pro Custom Login Page</h1>
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
 					<div class="row">
 						<div class="col-md-4 col-md-offset-4">
 							<form id="login-form">
